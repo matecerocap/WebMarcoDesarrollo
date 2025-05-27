@@ -1,0 +1,49 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Principios SOLID</title>
+    <script type="module">
+        import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
+        mermaid.initialize({ startOnLoad: true });
+    </script>
+</head>
+<body>
+    <h1>Principios SOLID</h1>
+
+    <h2>S: Principio de responsabilidad única (Single Responsibility Principle)</h2>
+    <div class="mermaid">
+        graph TD
+            A[Clase] -->|Responsabilidad única| B[Función específica]
+    </div>
+
+    <h2>O: Principio de abierto-cerrado (Open/Closed Principle)</h2>
+    <div class="mermaid">
+        graph TD
+            A[Clase Base] -->|Extensión| B[Clase Derivada]
+            B -->|Sin modificar| C[Código Fuente]
+    </div>
+
+    <h2>L: Principio de sustitución de Liskov (Liskov Substitution Principle)</h2>
+    <div class="mermaid">
+        graph TD
+            A[Clase Base] --> B[Clase Derivada]
+            B --> C[Funciona Correctamente]
+    </div>
+
+    <h2>I: Principio de segregación de interfaces (Interface Segregation Principle)</h2>
+    <div class="mermaid">
+        graph TD
+            A[Interfaz Grande] -->|Segregar| B[Interfaz Específica]
+            B --> C[Cliente]
+    </div>
+
+    <h2>D: Principio de inversión de dependencias (Dependency Inversion Principle)</h2>
+    <div class="mermaid">
+        graph TD
+            A[Módulo de Alto Nivel] -->|Depende de| B[Abstracción]
+            C[Módulo de Bajo Nivel] -->|Depende de| B[Abstracción]
+            B -->|No depende de| D[Detalles]
+    </div>
+</body>
+</html>

@@ -1,0 +1,87 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Arquitectura Basada en N-Capas</title>
+    <script type="module">
+        import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
+        mermaid.initialize({ startOnLoad: true });
+    </script>
+</head>
+<body>
+    <h1>Arquitectura Basada en N-Capas</h1>
+
+    <h2>1.1 Arquitectura Basada en N-Capas</h2>
+    <p>La arquitectura basada en n-capas es un modelo de diseño de software que separa una aplicación en múltiples capas o niveles, cada una de las cuales tiene una responsabilidad específica y bien definida. Esta estructura modular facilita el desarrollo, mantenimiento y escalabilidad de la aplicación al permitir que cada capa se desarrolle, pruebe y despliegue de manera independiente. Las capas de una aplicación están condicionadas por el arquetipo en el que se basan. Las aplicaciones en Repsol están generalmente compuestas por las siguientes capas:</p>
+
+    <h2>1.1.1 Capa de Presentación</h2>
+    <p>Es la capa encargada de interactuar con los usuarios finales, recibiendo entradas y mostrando resultados. Sus principales funciones incluyen:</p>
+    <ul>
+        <li>Gestión de la seguridad de acceso a la aplicación</li>
+        <li>Validación de datos de entrada</li>
+        <li>Gestión de eventos de usuario</li>
+        <li>Actualización de la interfaz en respuesta a cambios en los datos, eventos y acciones</li>
+        <li>Mejora de la experiencia del usuario mediante la implementación de diseños intuitivos y accesibles</li>
+    </ul>
+    <p>Esta capa debe facilitar la navegación y el uso eficaz de la aplicación. Generalmente está compuesta por formularios web, aplicaciones móviles, aplicaciones de escritorio, interfaces de línea de comandos, etc.</p>
+    <p>Esta capa estará implementada con diferentes tecnologías, dependiendo de diversos factores:</p>
+    <ul>
+        <li>Tipo de usuario</li>
+        <li>Dispositivo de acceso</li>
+        <li>Tipo de aplicación</li>
+        <li>Requisitos de experiencia de usuario</li>
+    </ul>
+
+    <h2>1.1.2 Capa de Publicación de Servicios</h2>
+    <p>Es la capa responsable de publicar la capa de negocio a la capa de presentación o a otras aplicaciones. Contiene las definiciones de las interfaces de los servicios, el contrato definido como OpenAPI, y la implementación de dichas interfaces según la tecnología de desarrollo. Esta capa de publicación de servicios además deberá implementar la autenticación y autorización necesaria antes de invocar a la capa de negocio.</p>
+
+    <h2>1.1.3 Capa de Negocio</h2>
+    <p>Es la capa responsable de implementar toda la lógica y los procesos de negocio que permiten a la aplicación realizar sus funciones. Esto incluye:</p>
+    <ul>
+        <li>Gestión de reglas de negocio</li>
+        <li>Gestión de flujos de negocio y sus estados</li>
+        <li>Ejecución de cálculos y transformaciones</li>
+        <li>Coordinación de las actividades entre las diferentes capas de la aplicación</li>
+    </ul>
+    <p>Esta capa debe garantizar que las reglas de negocio se apliquen correctamente y de manera consistente en todo el sistema. Entre sus tareas se encuentran la validación de datos de entrada, la aplicación de algoritmos y la toma de decisiones basada en la lógica específica del negocio.</p>
+
+    <h2>1.1.4 Capa de Persistencia</h2>
+    <p>Su función principal es gestionar el almacenamiento y el acceso a los datos de la aplicación de manera eficiente y segura. Esta capa se encarga de interactuar con las bases de datos, los sistemas de archivos y otros mecanismos de almacenamiento para asegurar que los datos se guarden y recuperen correctamente, garantizando la integridad y consistencia de los datos a través del uso de transacciones y otras técnicas de gestión de datos.</p>
+    <p>También es responsable de la optimización del rendimiento del acceso a los datos, implementando estrategias de caché, optimización de consultas, de la serialización y la deserialización de los datos.</p>
+
+    <h2>1.1.5 Capas Transversales</h2>
+    <p>Las capas transversales contienen componentes que se deben utilizar en el resto de las capas, como, por ejemplo:</p>
+    <ul>
+        <li>Objetos de negocio: Representan a las entidades de negocio a utilizar en las diferentes capas, generalmente a través de agregación.</li>
+        <li>Seguridad: Implementación de medidas de seguridad necesarias para proteger la aplicación y los datos (autenticación, autorización, encriptación de datos, políticas de seguridad).</li>
+        <li>Observabilidad: Proporcionar capacidades de monitorización y registro de eventos para el seguimiento del rendimiento de la aplicación, detección de problemas y análisis de logs.</li>
+        <li>Gestión de la configuración: Proporcionar acceso de forma centralizada a los parámetros de configuración y de entorno.</li>
+        <li>Gestión de Excepciones: Capturar, gestionar y registrar los errores producidos en la aplicación.</li>
+        <li>Caché: Acelerar el acceso a datos frecuentes por parte de todas las capas.</li>
+    </ul>
+
+    <h2>Diagrama de Arquitectura Basada en N-Capas</h2>
+    <div class="mermaid">
+        graph TD
+            A[Usuarios] --> B[Capa de Presentación]
+            B --> C[Capa de Publicación de Servicios]
+            C --> D[Capa de Negocio]
+            D --> E[Capa de Persistencia]
+            B --> F[Capas Transversales]
+            C --> F
+            D --> F
+            E --> F
+    </div>
+
+    <h2>Diagrama de Capas Transversales</h2>
+    <div class="mermaid">
+        graph TD
+            A[Capas Transversales] --> B[Objetos de Negocio]
+            A --> C[Seguridad]
+            A --> D[Observabilidad]
+            A --> E[Gestión de la Configuración]
+            A --> F[Gestión de Excepciones]
+            A --> G[Caché]
+    </div>
+</body>
+</html>

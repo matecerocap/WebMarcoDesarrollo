@@ -1,0 +1,61 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diagrams for Domain-Driven Design (DDD)</title>
+    <script type="module">
+        import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
+        mermaid.initialize({ startOnLoad: true });
+    </script>
+</head>
+<body>
+    <h1>Domain-Driven Design (DDD) Diagrams</h1>
+
+    <h2>1. Flujo General del Enfoque DDD</h2>
+    <div class="mermaid">
+        flowchart TD
+            A[Inicio del Proyecto] --> B[Comprensión del Dominio]
+            B --> C[Modelado del Dominio]
+            C --> D[Implementación Técnica]
+            D --> E[Integración de Contextos]
+            E --> F[Entrega de Solución]
+    </div>
+
+    <h2>2. Principios Fundamentales del DDD</h2>
+    <h3>Contextos Delimitados</h3>
+    <div class="mermaid">
+        graph TD
+            A[Contexto A] -->|Límite Claro| B[Contexto B]
+            A -->|Límite Claro| C[Contexto C]
+            B -->|Integración| D[Contexto D]
+            C -->|Integración| D
+    </div>
+
+    <h3>Lenguaje Ubicuo</h3>
+    <div class="mermaid">
+        graph LR
+            A[Desarrolladores] -->|Lenguaje Común| B[Expertos del Dominio]
+            B -->|Lenguaje Común| C[Documentación]
+            C -->|Lenguaje Común| A
+    </div>
+
+    <h3>Modelado del Dominio</h3>
+    <div class="mermaid">
+        graph TD
+            A[Problemas del Dominio] --> B[Modelos del Dominio]
+            B --> C[Reglas del Dominio]
+            C --> D[Soluciones de Software]
+    </div>
+
+    <h3>Integración</h3>
+    <div class="mermaid">
+        graph LR
+            A[Contexto A] -->|Integración| B[Contexto B]
+            B -->|Integración| C[Contexto C]
+            C -->|Integración| D[Contexto D]
+    </div>
+
+</body>
+</html>

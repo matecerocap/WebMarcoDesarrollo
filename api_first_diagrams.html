@@ -1,0 +1,55 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>API-First Approach Diagrams</title>
+    <script type="module">
+        import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
+        mermaid.initialize({ startOnLoad: true });
+    </script>
+</head>
+<body>
+    <h1>API-First Approach Diagrams</h1>
+
+    <h2>1. Flujo General del Enfoque API-First</h2>
+    <div class="mermaid">
+        flowchart TD
+        A[Inicio del Proyecto] --> B[Diseño de API con OpenAPI]
+        B --> C[Generación de Contrato]
+        C --> D[Desarrollo del Servicio]
+        C --> E[Desarrollo de Pruebas]
+        D --> F[Despliegue]
+        E --> F
+        F --> G[Consumo por Clientes]
+    </div>
+
+    <h2>2. Herramientas por Etapa</h2>
+    <div class="mermaid">
+        graph TD
+        A[Diseño de API] -->|OpenAPI| B[Swagger Editor]
+        A -->|Colaboración| C[Stoplight]
+        A -->|Simulación| D[Mock Servers]
+
+        E[Generación de Código] -->|OpenAPI Generator| F[SDKs Cliente/Servidor]
+        E -->|Autorest| G[SDKs Microsoft]
+
+        H[Pruebas] -->|Postman| I[Manual y Automatizada]
+        H -->|Newman| J[CI/CD]
+
+        K[Documentación] -->|Swagger UI| L[Interfaz Interactiva]
+        K -->|Redoc| M[Documentación Estática]
+    </div>
+
+    <h2>3. Beneficios del Enfoque API-First</h2>
+    <div class="mermaid">
+        graph LR
+        A[API-First] --> B[Integración más sencilla]
+        A --> C[Desarrollo paralelo]
+        A --> D[Contratos claros]
+        A --> E[Mayor flexibilidad]
+        A --> F[Documentación estandarizada]
+    </div>
+</body>
+</html>

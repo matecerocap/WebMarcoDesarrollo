@@ -1,0 +1,45 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>ALM Cycle in Repsol</title>
+    <script type="module">
+        import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
+        mermaid.initialize({ startOnLoad: true });
+    </script>
+</head>
+<body>
+    <h1>ALM Cycle in Repsol</h1>
+
+    <h2>DevSecOps Phases</h2>
+    <div class="mermaid">
+        graph TD
+            A[Planificación y Diseño] --> B[Codificación]
+            B --> C[Build]
+            C --> D[Testing]
+            D --> E[Release]
+            E --> F[Deploy]
+            F --> G[Operate]
+            G --> H[Monitor]
+    </div>
+
+    <h2>Entornos de Despliegue</h2>
+    <div class="mermaid">
+        graph TD
+            A[Desarrollo] --> B[Integración]
+            B --> C[Preproducción]
+            C --> D[Producción]
+    </div>
+
+    <h2>Uso de Pipelines CI/CD</h2>
+    <div class="mermaid">
+        graph TD
+            A[Desarrollo] --> B[Pipeline CI]
+            B --> C[Integración]
+            C --> D[Pipeline CD]
+            D --> E[Preproducción]
+            E --> F[Pipeline CD]
+            F --> G[Producción]
+    </div>
+</body>
+</html>

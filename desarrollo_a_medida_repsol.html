@@ -1,0 +1,179 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desarrollo a Medida en Repsol</title>
+    <script type="module">
+        import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
+        mermaid.initialize({ startOnLoad: true });
+    </script>
+</head>
+<body>
+    <h1>Desarrollo a Medida en Repsol</h1>
+    <h2>4.1 Autenticación y Autorización</h2>
+    <div class="mermaid">
+        graph TD
+            A[Desarrollo a Medida] --> B[Autenticación y Autorización]
+            B --> C[IdP Corporativo]
+            C --> D[OpenID Connect]
+            C --> E[oAuth2]
+            B --> F[Gestión de Credenciales]
+            F --> G[CyberArk]
+            F --> H[Azure KeyVault]
+            F --> I[AWS Secret Manager]
+            B --> J[Política de Rotado de Claves]
+            B --> K[Patrón de Roles]
+    </div>
+    <h2>4.2 Desarrollo de APIs</h2>
+    <div class="mermaid">
+        graph TD
+            A[Desarrollo a Medida] --> B[Desarrollo de APIs]
+            B --> C[Modelado de API]
+            C --> D[API Restful]
+            C --> E[Contratos OpenAPI]
+            B --> F[Patrón de desarrollo de APIs Rest]
+    </div>
+    <h2>4.3 Control de Excepciones</h2>
+    <div class="mermaid">
+        graph TD
+            A[Desarrollo a Medida] --> B[Control de Excepciones]
+            B --> C[Minimizar Excepciones]
+            B --> D[Captura y Mitigación]
+            D --> E[Registro en Log]
+            E --> F[Mensajes Consistentes]
+            E --> G[Time-stamp]
+            E --> H[Identificador de Correlación]
+            B --> I[Middleware Global]
+            B --> J[Controlador Genérico de Excepciones]
+            B --> K[Estrategia de Comunicación de Eventos]
+            K --> L[Trace]
+            K --> M[Debug]
+            K --> N[Info]
+            K --> O[Warn]
+            K --> P[Error]
+            K --> Q[Critical]
+    </div>
+    <h2>4.4 Healthchecks</h2>
+    <div class="mermaid">
+        graph TD
+            A[Desarrollo a Medida] --> B[Healthchecks]
+            B --> C[Endpoints de Estado Operativo]
+            C --> D[URL /Health]
+            B --> E[Patrón CNApp - Application Observability]
+            B --> F[Integración en CD]
+    </div>
+<h1>Desarrollo a Medida - Procesos Asíncronos y Consumo de APIs</h1>
+
+    <h2>Procesos Asíncronos</h2>
+    <div class="mermaid">
+        graph TD
+            A[Inicio del Proceso] --> B[Publicación de API]
+            B --> C[Ejecutar en Background]
+            C --> D{Condiciones}
+            D -->|Operaciones Lentas| E[Procesar en Background]
+            D -->|Tareas Largas| F[Procesar en Background]
+            D -->|Mejorar Escalabilidad| G[Procesar en Background]
+            D -->|Operaciones Rápidas| H[Ejecutar Directamente]
+            D -->|Operaciones Atómicas| H
+            D -->|Operaciones en Memoria| H
+    </div>
+
+    <h2>Estrategias de Procesos Asíncronos</h2>
+    <div class="mermaid">
+        graph TD
+            A[Procesos Asíncronos] --> B[Publicación/Suscripción]
+            A --> C[Colas]
+            A --> D[Polling]
+            B --> E[Comunicación Eficiente]
+            B --> F[Notificaciones Inmediatas]
+            C --> G[Orden Preestablecido]
+            C --> H[Seguridad Avanzada]
+            C --> I[Transacciones Atómicas]
+            D --> J[Verificación Periódica]
+            D --> K[Menor Complejidad]
+    </div>
+
+    <h2>Consumo de APIs</h2>
+    <div class="mermaid">
+        graph TD
+            A[Consumo de APIs] --> B[Gestión Segura de Credenciales]
+            A --> C[Prácticas de Seguridad]
+            B --> D[Repositorios de Credenciales]
+            D --> E[CyberArk]
+            D --> F[Azure KeyVault]
+            D --> G[AWS Secret Manager]
+    </div>
+
+    <h2>Callbacks</h2>
+    <div class="mermaid">
+        graph TD
+            A[Callbacks] --> B[Uso de Webhooks]
+            B --> C[Registro en Sistema]
+            B --> D[Desarrollo de EndPoint]
+            B --> E[Procesado de Evento]
+            B --> F[Gestión de Errores]
+    </div>
+
+<h2>4.7 Librerías de Terceros</h2>
+    <div class="mermaid">
+        graph TD
+            A[Uso de Librerías de Terceros] --> B[Utilizar librerías existentes en la organización]
+            A --> C[Informar a equipos de arquitectura]
+            A --> D[Incorporar librerías desde repositorios de Repsol]
+            A --> E[Análisis de código y revisiones de seguridad]
+            E --> F[Solicitar autorización]
+            E --> G[Licenciamiento]
+            E --> H[Soporte y mantenimiento]
+            E --> I[Validación y aprobación]
+    </div>
+
+    <h2>4.8 Gestión del Estado</h2>
+    <div class="mermaid">
+        graph TD
+            A[Gestión del Estado] --> B[No usar memoria de procesos, Cookies o Query String]
+            A --> C[Persistir estado en almacenamientos alternativos]
+            A --> D[Uso de Redis para caché]
+            D --> E[No guardar datos en sesión]
+    </div>
+
+    <h2>4.9 Inteligencia Artificial</h2>
+    <div class="mermaid">
+        graph TD
+            A[Desarrollo e Integración de IA] --> B[Autorización del Centro de Competencia de IA]
+            A --> C[Participación del equipo de plataforma de ARiA]
+    </div>
+
+    <h2>4.10 Datos</h2>
+    <div class="mermaid">
+        graph TD
+            A[Gestión de Datos] --> B[Acceso a repositorios de datos]
+            B --> C[No acceso directo desde capa frontal]
+            B --> D[Estrategia Database First]
+            B --> E[No lógica de aplicación en servidor de BBDD]
+            B --> F[Acceso directo reservado a backend]
+            F --> G[Apificación de acceso a BBDD]
+            F --> H[Réplica o BBDD informacional]
+            F --> I[Casos de uso prescritos por equipos de Arquitectura]
+    </div>
+
+    <div class="mermaid">
+        graph TD
+            A[Prácticas de Desarrollo] --> B[Conexión a BBDD en configuración de la aplicación]
+            A --> C[Gestión de credenciales en repositorios seguros]
+            A --> D[Definición de modelos de datos como código]
+            D --> E[Código de creación del modelo de datos]
+            D --> F[Código de carga de datos iniciales]
+            D --> G[Código de optimización de rendimiento]
+            D --> H[Alteraciones en modelos de datos]
+            A --> I[Capa de abstracción para persistencia de datos]
+            I --> J[Pruebas unitarias específicas]
+            A --> K[Cierre de conexiones después de operaciones]
+            K --> L[Uso de pooling de conexiones]
+            A --> M[Gestión de excepciones en conexión a BBDD]
+    </div>
+
+
+</body>
+</html>

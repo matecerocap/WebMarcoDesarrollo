@@ -1,0 +1,82 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Arquetipos de Desarrollo</title>
+    <script type="module">
+        import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
+        mermaid.initialize({ startOnLoad: true });
+    </script>
+</head>
+<body>
+    <h1>Arquetipos de Desarrollo</h1>
+
+    <h2>3.1 Biblioteca de Componentes Reutilizables</h2>
+    <div class="mermaid">
+        graph TD
+            A[Desarrollo de Componentes] --> B[Publicación en Repositorio]
+            B --> C[Referencia por Gestores de Paquetes]
+            C --> D[Uso en Aplicaciones]
+    </div>
+
+    <h2>3.2 Aplicación de Servicio Web (API WEB)</h2>
+    <div class="mermaid">
+        graph TD
+            A[Aplicación de Servicio Web] --> B[Exposición de Funcionalidad]
+            B --> C[APIs REST]
+            C --> D[Autenticación y Autorización]
+            D --> E[Capa de Negocio]
+    </div>
+
+    <h2>3.3 Aplicación Web</h2>
+    <div class="mermaid">
+        graph TD
+            A[Aplicación Web] --> B[Navegador Web]
+            B --> C[HTML, JavaScript, CSS]
+            C --> D[Interacción de Usuario]
+            D --> E[Capa de Presentación]
+            E --> F[Cliente]
+            F --> G[APIs REST]
+            G --> H[Capa de Negocio]
+    </div>
+
+    <h2>3.4 Aplicación Móvil</h2>
+    <div class="mermaid">
+        graph TD
+            A[Aplicación Móvil] --> B[Dispositivo Móvil]
+            B --> C[Aplicación Nativa]
+            B --> D[Aplicación Híbrida]
+            C --> E[Swift (iOS)]
+            C --> F[Kotlin (Android)]
+            D --> G[Tecnologías No Nativas]
+            G --> H[Métodos Nativos]
+            H --> I[Notificaciones Push]
+            I --> J[Sensores y Hardware]
+    </div>
+
+    <h2>3.5 Aplicación de Escritorio</h2>
+    <div class="mermaid">
+        graph TD
+            A[Aplicación de Escritorio] --> B[Portátil o Equipo Fijo]
+            B --> C[Tecnologías Nativas]
+            C --> D[Capa de Negocio]
+            D --> E[Aplicación de Servicio Web]
+    </div>
+
+    <h2>3.7 Procesos Automáticos</h2>
+    <h3>Proceso Automático de Línea de Comandos (CLI)</h3>
+    <div class="mermaid">
+        graph TD
+            A[Proceso Automático CLI] --> B[Línea de Comandos]
+            B --> C[Planificador]
+    </div>
+
+    <h3>Proceso Automático Orientado a Eventos</h3>
+    <div class="mermaid">
+        graph TD
+            A[Proceso Automático Orientado a Eventos] --> B[Recepción de Evento]
+            B --> C[Publicación en Tópico]
+    </div>
+
+</body>
+</html>
